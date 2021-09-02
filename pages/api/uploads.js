@@ -16,7 +16,7 @@ const apiRoute = nextConnect({
   }
 });
 
-apiRoute.use(upload.array('theFiles'));
+apiRoute.use(upload.single('attachment'));
 
 apiRoute.post(async (req, res) => {
   const mailgun = new Mailgun(formData);
@@ -26,7 +26,7 @@ apiRoute.post(async (req, res) => {
     key: process.env.MAILGUN_API_KEY
   });
 
-  const { originalname, buffer } = req.files[0];
+  const { originalname, buffer } = req.file;
 
   const emailToSend = {
     from: process.env.ADDRESS_FROM,
@@ -41,7 +41,7 @@ apiRoute.post(async (req, res) => {
 
   await mg.messages.create(process.env.MAILGUN_DOMAIN, emailToSend);
 
-  res.status(200).json({ data: 'success' });
+  res.status(200).json({ status: 'success' });
 });
 
 export default apiRoute;

@@ -19,6 +19,10 @@ const Home = () => {
 
     const response = await axios.post('/api/uploads', formData, config);
 
+    if (response.data.status === 'success') {
+      alert('Check your email!');
+    }
+
     console.log('response', response.data);
   };
 
@@ -46,12 +50,12 @@ const Home = () => {
             type="button"
             className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={onClickHandler}>
-            Upload Single File
+            Select file + Send email
           </button>
           <input
             accept=""
             multiple={false}
-            name="theFiles"
+            name="attachment"
             onChange={onChangeHandler}
             ref={fileInputRef}
             style={{ display: 'none' }}
