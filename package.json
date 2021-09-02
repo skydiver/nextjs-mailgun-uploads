@@ -1,0 +1,33 @@
+{
+  "name": "nextjs-mailgun-uploads",
+  "version": "1.0.0",
+  "description": "Demo for Next.js + File Upload + Mailgun",
+  "license": "MIT",
+  "author": "Martín M.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+  },
+  "dependencies": {
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.28.0",
+    "eslint-config-next": "^11.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.4",
+    "prettier": "^2.3.1",
+    "tailwindcss": "^2.1.4"
+  }
+}
